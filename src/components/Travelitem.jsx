@@ -27,8 +27,6 @@ const TravelItem = ({
     }
   };
 
-  console.log(changeStatusColor);
-
   return (
     <div className="">
       <div className="destination">
