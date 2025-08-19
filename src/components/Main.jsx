@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Form from "./form";
+import Form from "./Form";
 import TravelItem from "./Travelitem";
 
 const Main = () => {
