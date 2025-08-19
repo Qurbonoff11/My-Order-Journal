@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "./form";
 import TravelItem from "./Travelitem";
 
 const Main = () => {
   const [isForm, setIsForm] = useState(false);
-  const [destinations, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState(() => {
+    const destinations = localStorage.getItem("destinations");
+    return destinations ? JSON.parse(destinations) : [];
+  });
   const [selected, setSelected] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("destinations", JSON.stringify(destinations));
+  }, [destinations]);
 
   const handleAddDestination = (newDestination) => {
     setDestinations((prev) => {
